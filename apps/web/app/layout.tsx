@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Prestige Home Editor",
-  description: "Visualisez votre cuisine renovée avec les films Cover Styl'",
+  description: "Visualisez votre cuisine rénovée avec les films Cover Styl'",
 };
 
 export default function RootLayout({
@@ -16,7 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} flex flex-col min-h-screen`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
